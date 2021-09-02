@@ -1,5 +1,7 @@
 package ua.univer.lesson02;
 
+import java.util.Arrays;
+
 public class ProgramOOP {
     public static void main(String[] args) {
         Point p1 = new Point(1,1);
@@ -25,12 +27,25 @@ public class ProgramOOP {
         masObj[3] =cl1;
         masObj[4] =triangle1;
       //  masObj[5] = new Object();
+        ColorAble [] colorAbles = new ColorAble[3];
+        int countColor = 0;
         for (var obj: masObj) {
             System.out.println(obj);
             if (obj instanceof Triangle){
                 Triangle tr = (Triangle) obj;
                 System.out.println(tr.getLengthAB());
             }
+            if (obj instanceof ColorAble){
+                ColorAble colorAble = (ColorAble) obj;
+                System.out.println(colorAble.getColor());
+                colorAbles[countColor++] = colorAble;
+
+            }
+        }
+        colorAbles[2] = new Flower();
+        System.out.println(Arrays.toString(colorAbles));
+        for (ColorAble c: colorAbles) {
+            System.out.println(c.getColor());
         }
     }
 }

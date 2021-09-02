@@ -1,6 +1,6 @@
 package ua.univer.lesson02;
 
-public class ColorLine extends Line{
+public class ColorLine extends Line implements ColorAble{
     private String color;
 
     public ColorLine(Point beg, Point end, String color) {

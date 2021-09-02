@@ -1,6 +1,6 @@
 package ua.univer.lesson02;
 
-public class ColorPoint extends Point{
+public class ColorPoint extends Point implements ColorAble{
     private String color;
 
     public ColorPoint(int x, int y, String color) {
