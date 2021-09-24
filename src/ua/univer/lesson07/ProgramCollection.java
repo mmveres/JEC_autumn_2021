@@ -102,11 +102,24 @@ class MyStack<T> implements Iterable<T>, IMyStack<T> {
 //    public Iterator<T> iterator() {
 //        return Arrays.stream(arr).iterator();
 //    }
+}
+class Cat{
+    private String name;
 
+    public Cat(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
 public class ProgramCollection {
     public static void main(String[] args) {
-        IMyStack<Integer> stack = new MyStack3<>();
+        IMyStack<Integer> stack = new MyStack<>();
         stack.push(11);
         stack.push(12);
         stack.push(13);
@@ -118,5 +131,13 @@ public class ProgramCollection {
        Iterator<Integer> iterator= stack.iterator();
         while (iterator.hasNext())
             System.out.println(iterator.next());
+
+        IMyStack<Cat> stackCat = new MyStack<>();
+        stackCat.push(new Cat("Tom1"));
+        stackCat.push(new Cat("Tom2"));
+        stackCat.push(new Cat("Tom3"));
+        for (var value: stackCat ) {
+            System.out.println(value);
+        }
     }
 }
